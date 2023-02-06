@@ -35,6 +35,7 @@ jobs:
           cluster-name: '${{ secrets.cluster_name }}'
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
       - name: Set K8s secret
+        uses: Azure/k8s-create-secret@v1.1
         with:
           container-registry-url: ${{ secrets.registry }}.azurecr.io
           container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
