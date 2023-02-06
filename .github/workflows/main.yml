@@ -33,14 +33,6 @@ jobs:
         with:
           resource-group: '${{ secrets.resource_group }}' 
           cluster-name: '${{ secrets.cluster_name }}'
-          creds: '${{ secrets.AZURE_CREDENTIALS }}'
-      - name: Set K8s secret
-        uses: Azure/k8s-create-secret@v1.1
-        with:
-          container-registry-url: ${{ secrets.registry }}.azurecr.io
-          container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
-          container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-          secret-name: k8s-secret
       - name: Setup kubectl
         id: install-kubectl
         uses: azure/setup-kubectl@v3
@@ -52,5 +44,4 @@ jobs:
           manifests: |
              azure-vote-all-in-one-redis.yaml
           images: '${{ secrets.registry }}.azurecr.io/${{ secrets.repository }}/azure-vote-front:${{ github.sha }}'
-          imagepullsecrets: |
-             k8s-secret
+          pull-images: true
