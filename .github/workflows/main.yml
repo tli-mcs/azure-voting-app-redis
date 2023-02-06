@@ -26,9 +26,7 @@ jobs:
         id: login
         uses: azure/login@v1.4.3
         with:
-          client-id: ${{ secrets.SERVICE_PRINCIPAL }}
-          tenant-id: ${{ secrets.TENANT }}
-          subscription-id: ${{ secrets.SUBSCRIPTION }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Set AKS context
         id: set-context
         uses: azure/aks-set-context@v3
