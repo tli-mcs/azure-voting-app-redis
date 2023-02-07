@@ -42,6 +42,6 @@ jobs:
         with:
           namespace: 'default'
           manifests: |
-             azure-vote-all-in-one-redis.yaml
+             manifest/deployment.yaml
           images: mcsfusionacr.azurecr.io/azuredocs/azure-vote-front:${{ github.sha }}'
           pull-images: false
