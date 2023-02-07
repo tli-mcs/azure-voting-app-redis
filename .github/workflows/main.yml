@@ -45,4 +45,4 @@ jobs:
           manifests: |
              manifest/deployment.yaml
           images: 'mcsfusionacr.azurecr.io/azuredocs/azure-vote-front:7662a482e18214610d0034ce2d4a1af16147743b'
-          pull-images: false 
+          pull-images: true 
