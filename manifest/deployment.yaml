@@ -91,7 +91,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /vote/
+      - path: /
         backend:
           service:
             name: azure-vote-front
