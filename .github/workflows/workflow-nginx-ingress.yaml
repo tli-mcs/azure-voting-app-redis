@@ -29,4 +29,4 @@ jobs:
         with:
           namespace: 'default'
           manifests: |
-             manifest/demo-app-deployment.yaml
+             manifest/pgadmin-deployment.yaml
